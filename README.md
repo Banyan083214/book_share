@@ -46,11 +46,11 @@ book share
 | Column             | Type        | Options     |
 | ------------------ | ----------- | ----------- |
 | title              | string      | null: false |
-| synopsis           | text        | null: false |
-| image              | string      | null: false |
+| synopsis           | text        |             |
+| image              | string      |             |
 | genre_id           | integer     | null: false |
 | author             | string      | null: false |
-| publication_date   | date        | null: false |
+| publication_date   | date        |             |
 | text               | text        | null: false |
 | user               | references  | null: false, foreign_key: true |
 
