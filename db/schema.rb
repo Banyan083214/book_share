@@ -12,11 +12,17 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_03_28_083547) do
   create_table "posts", charset: "utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "text"
-    t.text "image"
+    t.string "title", null: false
+    t.text "synopsis"
+    t.string "image"
+    t.integer "genre_id", null: false
+    t.string "author", null: false
+    t.date "publication_date"
+    t.text "text", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -32,4 +38,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_28_083547) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "posts", "users"
 end
