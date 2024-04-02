@@ -3,7 +3,6 @@ class CreatePosts < ActiveRecord::Migration[7.0]
     create_table :posts do |t|
       t.string :title, null: false
       t.text :synopsis
-      t.string :image
       t.integer :genre_id, null: false
       t.string :author, null: false
       t.date :publication_date
