@@ -5,4 +5,9 @@ class Post < ApplicationRecord
   validates :genre_id, presence: true
   validates :author, presence: true
   validates :text, presence: true
+  validates :content, presence: true, unless: :was_attached?
+
+  def was_attached?
+    self.image.attached?
+  end
 end
