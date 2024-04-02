@@ -1,10 +1,12 @@
 <div class="contents row">
   <% @posts.each do |post| %>
-    <div class="content_post" style="background-image: url(<%= post.image %>);">
-    </div>
+     <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+  </div>
+</div>
+
 
     <h3 class="post-title">
       <%= post.title %>
+    </h3>
   <% end %>
 </div>
-
